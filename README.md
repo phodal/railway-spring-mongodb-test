@@ -1,24 +1,29 @@
----
-title: Kotlin Spring
-description: A basic Kotlin Kotlin Spring server
-tags:
-  - spring
-  - kotlin
----
+GET       /employees                    # get employee list
+GET       /employees/1                  # get a specific employee by ID
+GET       /employees?gender=male        # get all male employees
 
-# Ktor Example
+Employee
+{
+"id": 5,
+"name": "Lily",
+"age": 20,
+"gender": "Female",
+"salary": 8000
+}
 
-This example starts a basic [Kotlin Spring Boot](https://spring.io/projects/spring-boot) web server.
+POST      /employees                    # add an employee
+response status 201 created
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/w502ro)
+PUT       /employees/1                  # update an employee
+DELETE    /employees/1                  # delete an employee
+response status 204 no content
 
-## ✨ Features
+GET       /employees?page=1&pageSize=5  # Page query, page equals 1, pageSize equals 5
 
-- Spring
-- Kotlin
-
-## 💁‍♀️ How to use
-
-- Click the Railway button to deploy the app
-- Clone the project and connect to it using `railway link`
-- Run your Kotlin Spring app locally using `railway ./gradlew run`
+page=2 pageSize=2
+A
+B
+C
+D
+E
+F
